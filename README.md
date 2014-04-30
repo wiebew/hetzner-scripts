@@ -8,7 +8,7 @@ vi /etc/network/interfaces
 
 add the line
 
-pre-up iptables-restore < /etc/iptables.up.rules
+```pre-up iptables-restore < /etc/iptables.up.rules```
 
 to this section:
 ````
