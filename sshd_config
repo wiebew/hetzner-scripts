@@ -1,5 +1,6 @@
-# Package generated configuration file
-# See the sshd_config(5) manpage for details
+# Disabled password login
+# Dsiabled root login
+
 
 # What ports, IPs and protocols we listen for
 Port 22
