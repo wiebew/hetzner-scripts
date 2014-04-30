@@ -11,8 +11,8 @@ add the line
 pre-up iptables-restore < /etc/iptables.up.rules
 
 to this section:
-``
+````
 auto lo
 iface lo inet loopback
 pre-up iptables-restore < /etc/iptables.up.rules
-``
+````
