@@ -1,7 +1,7 @@
 iptables-scripts
 ================
 
-rename the appropiate script to pre-up iptables.up.rules
+rename the appropiate script to ```pre-up iptables.up.rules```
 
 vi /etc/network/interfaces
 
