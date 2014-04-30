@@ -3,7 +3,7 @@ iptables-scripts
 
 rename the appropiate script to ```pre-up iptables.up.rules```
 
-vi /etc/network/interfaces
+```vi /etc/network/interfaces```
 
 
 add the line
