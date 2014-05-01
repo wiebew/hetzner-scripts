@@ -1,0 +1,29 @@
+---
+- name: 1c. Install packages
+  apt: name={{item}} state=present
+        with_items:
+          - ssh
+          - openssh-server
+		  - vim-nox
+		  - ntp 
+		  - ntpdate
+		  - postfix
+		  - postfix-mysql 
+		  - postfix-doc
+		  - mysql-client
+		  - mysql-server 
+		  - openssl 
+		  - getmail4 
+		  - rkhunter 
+		  - binutils 
+		  - dovecot-imapd 
+		  - dovecot-pop3d 
+		  - dovecot-mysql 
+		  - dovecot-sieve 
+		  - sudo
+		  - nginx
+		  - php5-fpm
+		  - phpmyadmin
+		  - mailman
+		  - squirrelmail
+		   

@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - webserver
+    - mail
+    - database
