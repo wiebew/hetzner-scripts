@@ -18,7 +18,7 @@ steps:
 - provision a new machine at hetzner. Store the password. Hetzner only shows it once, if you navigate away from the page it's gone.
 - clone this repository
 - copy the hosts.example file to hosts. Adapt the content for your situation (i.e. fill in the desired hostname and admin username)
-- _important_ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
+- __important__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
 - logout fromy our server. This will be your last manual login as root on this instance of your server ;-)
 - run ``ansible-playbook playbook.yml -i hosts --ask-pass``
 - copy and paste the stored password when ansible prompts you
