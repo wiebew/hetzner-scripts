@@ -1,5 +1,0 @@
----
-- include: settings.yml
-- hosts: all
-  roles:
-     - ispconfig

@@ -1,0 +1,1 @@
+yoursever.nl ansible_ssh_user="root" admin_user_name="non_root_username_here"

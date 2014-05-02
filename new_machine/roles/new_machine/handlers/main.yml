@@ -1,0 +1,5 @@
+---
+- name: restart iptables
+  service: name=iptables state=restarted
+- name: restart ssh
+  service: name=ssh state=restarted

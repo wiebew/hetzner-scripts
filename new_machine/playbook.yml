@@ -1,5 +1,4 @@
 ---
-- include: settings.yml
 - hosts: all
   roles:
      - new_machine
