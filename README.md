@@ -6,7 +6,7 @@ new_machine
 Setup script for adapting a minimal Ubuntu 14.04 installation on a bare metal Hetzner.de server to a configuration with:
 - Firewall that allows http, https, 8080 and ssh communication. With protection against bruteforce ssh attacks
 - blocked root remote login
-- an admin user that can sudo and has publickey ssh authentication
+- an admin user with bash shell that can sudo and has publickey ssh authentication
 
 __prerequisites:__
 - You have installed ansible (this is tested on ansible 1.5.5)
@@ -14,7 +14,7 @@ __prerequisites:__
 - you have a public ssh key stored in ~/.ssh/id_rsa.pub. This key will be used for access to the admin account
 
 __steps:__
-- provision a new ubuntu 14.04 machine at hetzner. __Store the password__. Hetzner only shows it once, if you navigate away from the page it's gone.
+- provision a new ubuntu 14.04 LTS Minimal machine at hetzner. __Store the password__. Hetzner only shows it once, if you navigate away from the page it's gone.
 - clone this repository
 - copy the hosts.example file to hosts. Adapt the content for your situation (i.e. fill in the desired hostname and admin username)
 - __important__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
