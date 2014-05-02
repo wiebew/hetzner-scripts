@@ -1,7 +1,18 @@
 ---
+- name: apt-get update
+  apt: update_cache=yes
+
 - name: set hostname
   lineinfile: dest=/etc/hostname regexp="^.*"  line='{{ inventory_hostname }}'
   notify: reload hostname
+  
+- name: change ipv4 hosts
+  lineinfile: dest=/etc/hosts regexp="^{{ ansible_default_ipv4.address}}" line="{{ ansible_default_ipv4.address}} {{ inventory_hostname }}"
+  notify: restart networking
+
+- name: change ipv6 hosts
+  lineinfile: dest=/etc/hosts regexp="^{{ ansible_default_ipv6.address}}" line="{{ ansible_default_ipv6.address}} {{ inventory_hostname }}"
+  notify: restart networking
 
 - name: Add user so we can turn off root login
   user: name='{{ admin_user_name }}' shell=/bin/bash state=present  
