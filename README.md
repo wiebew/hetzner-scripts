@@ -16,13 +16,14 @@ __prerequisites:__
 __steps:__
 - provision a new ubuntu 14.04 LTS Minimal machine at hetzner. __Store the password__. Hetzner only shows it once, if you navigate away from the page it's gone.
 - clone this repository
+- cd into the folder new_machine
 - copy the hosts.example file to hosts. Adapt the content for your situation (i.e. fill in the desired hostname and admin username)
-- __important__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
-- logout fromy our server. This will be your last manual login as root on this instance of your server ;-)
+- __IMPORTANT__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
+- logout from your server. This will be your last manual login as root on this instance of your server.
 - run ``ansible-playbook playbook.yml -i hosts --ask-pass``
 - copy and paste the stored password when ansible prompts you
 - sit back and watch the show
-- when scripts have run, wait a minute or two for the machine finish rebooting
+- when scripts have run, wait a minute or two for the machine to finish rebooting
 - ssh to the new machine, you should go straight to the prompt
 - test if sudo works (e.g. ``sudo df -h``)
 - done, have a beer ;-)
