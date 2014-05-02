@@ -12,8 +12,11 @@
   
 - name: Set up iptables rules
   copy: src=iptables.up.rules dest=/etc/iptables.up.rules
-  notify: restart iptables
+  
 - name: Ensure iptables is loaded on startup by adding a command to interfaces file
   lineinfile: dest=/etc/network/interfaces insertafter="^iface lo inet loopback"  line="  pre-up iptables-restore < /etc/iptables.up.rules"
+
+- name: reboot the servers to reload iptables, root login disabled use admin user to access your server
+  action: command /sbin/reboot
 
 

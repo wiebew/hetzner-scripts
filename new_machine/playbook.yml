@@ -1,4 +1,6 @@
 ---
-- hosts: all
+- name: Setup bare metal minimal ubuntu 14.04 install on a Hetzner machine
+  hosts: all
+
   roles:
-     - new_machine
+    - new_machine
