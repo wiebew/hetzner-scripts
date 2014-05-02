@@ -1,6 +1,5 @@
 ---
+- include: settings.yml
 - hosts: all
   roles:
-    - webserver
-    - mail
-    - database
+     - ispconfig
