@@ -3,7 +3,7 @@ hetzner-scripts
 
 new_machine
 -----------
-Setup script for adapting a minimal Ubuntu 14.04 installation on a bare metal Hetzner.de server to a configuration with:
+Setup script for adapting a minimal Ubuntu 14.04 installation on a bare metal Hetzner.de server with:
 - Firewall that allows http, https, 8080 and ssh communication. With protection against bruteforce ssh attacks
 - blocked root remote login
 - an admin user with bash shell that can sudo and has publickey ssh authentication
