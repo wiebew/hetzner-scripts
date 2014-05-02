@@ -1,3 +1,9 @@
 ---
 - name: restart ssh
   service: name=ssh state=restarted
+  
+- name: restart server
+  action: command /sbin/reboot
+  
+- name: reload hostname
+  action: command hostname {{ inventory_hostname }}  
