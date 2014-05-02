@@ -18,7 +18,8 @@ __steps:__
 - clone this repository
 - cd into the folder new_machine
 - copy the hosts.example file to hosts. Adapt the content for your situation (i.e. fill in the desired hostname and admin username)
-- __IMPORTANT__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
+- __IMPORTANT__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. 
+- Please check this is not the rescue instance but a real Ubuntu installation. If the prompt shows ``root@rescue`` you are still in rescue mode. In that case logout and login again to verify the Hetzner install is finished. An ubuntu prompt will show something like ``username@Ubuntu-1404-trusty-64-minimal`` 
 - logout from your server. This will be your last manual login as root on this instance of your server.
 - run ``ansible-playbook playbook.yml -i hosts --ask-pass``
 - copy and paste the stored password when ansible prompts you
