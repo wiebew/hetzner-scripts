@@ -8,14 +8,13 @@ Setup script for adapting a minimal Ubuntu 14.04 installation on a bare metal He
 - blocked root remote login
 - an admin user that can sudo and has publickey ssh authentication
 
-prerequisites:
+__prerequisites:__
 - You have installed ansible (this is tested on ansible 1.5.5)
 - you have installed sshpass
 - you have a public ssh key stored in ~/.ssh/id_rsa.pub. This key will be used for access to the admin account
 
-
-steps:
-- provision a new machine at hetzner. Store the password. Hetzner only shows it once, if you navigate away from the page it's gone.
+__steps:__
+- provision a new ubuntu 14.04 machine at hetzner. __Store the password__. Hetzner only shows it once, if you navigate away from the page it's gone.
 - clone this repository
 - copy the hosts.example file to hosts. Adapt the content for your situation (i.e. fill in the desired hostname and admin username)
 - __important__ login to new server with ``ssh root@yourserver.com``. This will add your server to known_hosts in ~/.ssh and prevent ansible errors. Please check this is not the rescue instance but a real Ubunt installation.
