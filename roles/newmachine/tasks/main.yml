@@ -1,0 +1,5 @@
+---
+- name: Create user.
+  user: name='{{admin_user_name}}' state=present createhome=yes shell=/bin/bash
+- name: Add RSA key to the remote host
+  authorized_key: user='{{ ansible_ssh_user }}' key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
