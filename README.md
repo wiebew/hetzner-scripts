@@ -28,7 +28,3 @@ __steps:__
 - ssh to the new machine, you should go straight to the prompt
 - test if sudo works (e.g. ``sudo df -h``)
 - done, have a beer ;-)
-
-ispconfig
----------
-setup script for installing ispconfig on a machine. Can be run after new_machine.
