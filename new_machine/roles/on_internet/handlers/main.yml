@@ -1,0 +1,10 @@
+---
+- name: restart server
+  action: command /sbin/reboot
+  
+- name: reload hostname
+  action: command hostname {{ inventory_hostname }}  
+  
+- name: restart networking
+  service: name=networking state=restarted
+  

@@ -1,0 +1,17 @@
+---
+- name: Add user so we can turn off root login
+  user: name='{{ admin_user_name }}' shell=/bin/bash state=present  
+  
+- name: Add RSA key to the remote host for the admin user
+  authorized_key: user='{{ admin_user_name }}' key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+- name: add admin user to sudoers file
+  lineinfile: "dest=/etc/sudoers state=present regexp='^{{ admin_user_name }}' line='{{ admin_user_name }} ALL=(ALL) NOPASSWD:ALL'"
+
+- name: adapt sshd config to block password and root logins
+  copy: src=sshd_config dest=/etc/ssh/sshd_config
+  notify: restart ssh
+  
+
+
+
