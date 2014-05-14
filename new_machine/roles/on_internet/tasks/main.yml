@@ -1,7 +1,4 @@
 ---
-- name: apt-get update
-  apt: update_cache=yes
-
 - name: set hostname
   lineinfile: dest=/etc/hostname regexp="^.*"  line='{{ inventory_hostname }}'
   notify: reload hostname

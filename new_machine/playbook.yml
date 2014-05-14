@@ -3,5 +3,6 @@
   hosts: all
   sudo: true
   roles:
+    -  apt_client
     -  non_root_ssh
     -  on_internet
