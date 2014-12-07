@@ -123,8 +123,8 @@
 # This section is a good place to enable your host-specific services.         #
 ###############################################################################
 
-# Accept HTTP and HTTPS and port 8080
--A INPUT -p tcp -m multiport --dports 80,443,8080 --syn -m conntrack --ctstate NEW -j ACCEPT
+# Accept HTTP and HTTPS and ports 8080, 8081
+-A INPUT -p tcp -m multiport --dports 80,443,8080,8081 --syn -m conntrack --ctstate NEW -j ACCEPT
 
 # Accept FTP only for IPv4
 #-4 -A INPUT -p tcp --dport 21 --syn -m conntrack --ctstate NEW -j ACCEPT
