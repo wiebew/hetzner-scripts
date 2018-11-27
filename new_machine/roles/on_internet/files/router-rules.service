@@ -1,0 +1,9 @@
+[Unit]
+Description = Apply base firewall rules for router functionality
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/iptables-restore < /etc/network/iptables.up.rules
+
+[Install]
+WantedBy=network-pre.target

@@ -11,12 +11,12 @@
   lineinfile: dest=/etc/hosts regexp="^{{ ansible_default_ipv6.address}}" line="{{ ansible_default_ipv6.address}} {{ inventory_hostname }}"
   notify: restart networking
 
-- name: Set up iptables rules
-  copy: src=iptables.up.rules dest=/etc/iptables.up.rules
+- name: Copy iptables rules file
+  copy: src=iptables.up.rules dest=/etc/network/iptables.up.rules
   notify: restart server
   
-- name: Ensure iptables is loaded on startup by adding a command to interfaces file
-  lineinfile: dest=/etc/network/interfaces insertafter="^iface lo inet loopback"  line="  pre-up iptables-restore < /etc/iptables.up.rules"
+- name: Ensure iptables is loaded on startup by adding a file to systemd/system
+  copy: src=router-rules.service dest=/etc/systemd/system/router-rules.service
   
 
 

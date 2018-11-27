@@ -1,7 +1,11 @@
 ---
-- name: Setup bare metal minimal ubuntu 14.04 install on a Hetzner machine
+- name: Setup bare metal minimal ubuntu 18.04 install on a Hetzner machine
   hosts: all
+  gather_facts: False #disabled initially, until we have ensured python is installed
   sudo: true
+  pre_tasks:
+    - raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    - setup: #this will do a gather_facts so variables are set for the roles
   roles:
     -  apt_client
     -  non_root_ssh
